@@ -8,14 +8,16 @@ public class InputParameters {
 
     private BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 
-    public String getParameters() {
+    public InputParameters(){}
+
+    public String readLine() {
         String enteredString = "";
         try {
             enteredString = bufferedReader.readLine();
         } catch (IOException ex) {
+            System.out.println("Connection was interrupted");
             ex.printStackTrace();
         }
         return enteredString;
     }
-
 }
